@@ -1,6 +1,9 @@
-Class main{
-    static void Main(string[] args){
-        private int n;
-        Console.wrt
+using Internal;
+using System;
+class mst
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("test");
     }
 }

@@ -1,0 +1,15 @@
+D:\moifek\studies+codes\Master\Optimization\MST\MST\MST\obj\Debug\net6.0\MST.csproj.AssemblyReference.cache
+D:\moifek\studies+codes\Master\Optimization\MST\MST\MST\obj\Debug\net6.0\MST.GeneratedMSBuildEditorConfig.editorconfig
+D:\moifek\studies+codes\Master\Optimization\MST\MST\MST\obj\Debug\net6.0\MST.AssemblyInfoInputs.cache
+D:\moifek\studies+codes\Master\Optimization\MST\MST\MST\obj\Debug\net6.0\MST.AssemblyInfo.cs
+D:\moifek\studies+codes\Master\Optimization\MST\MST\MST\obj\Debug\net6.0\MST.csproj.CoreCompileInputs.cache
+D:\moifek\studies+codes\Master\Optimization\MST\MST\MST\bin\Debug\net6.0\MST.exe
+D:\moifek\studies+codes\Master\Optimization\MST\MST\MST\bin\Debug\net6.0\MST.deps.json
+D:\moifek\studies+codes\Master\Optimization\MST\MST\MST\bin\Debug\net6.0\MST.runtimeconfig.json
+D:\moifek\studies+codes\Master\Optimization\MST\MST\MST\bin\Debug\net6.0\MST.dll
+D:\moifek\studies+codes\Master\Optimization\MST\MST\MST\bin\Debug\net6.0\MST.pdb
+D:\moifek\studies+codes\Master\Optimization\MST\MST\MST\obj\Debug\net6.0\MST.dll
+D:\moifek\studies+codes\Master\Optimization\MST\MST\MST\obj\Debug\net6.0\refint\MST.dll
+D:\moifek\studies+codes\Master\Optimization\MST\MST\MST\obj\Debug\net6.0\MST.pdb
+D:\moifek\studies+codes\Master\Optimization\MST\MST\MST\obj\Debug\net6.0\MST.genruntimeconfig.cache
+D:\moifek\studies+codes\Master\Optimization\MST\MST\MST\obj\Debug\net6.0\ref\MST.dll

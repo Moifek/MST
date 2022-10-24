@@ -1,54 +1,68 @@
-﻿
-Console.WriteLine("Method ? : \n");
-int x = int.Parse(Console.ReadLine());
-if (x==1)
+﻿using MST;
+
+class Program
 {
-    Console.WriteLine("Nombre d'entrée(s) : \n");
-    int n = int.Parse(Console.ReadLine());
-    int[] Stock = new int[n];
-    for (int i = 0; i < n; i++)
+
+    static void Main(string[] args)
+
     {
-        Console.WriteLine($"{i + 1}\'ème élement:");
-        Stock[i] = int.Parse(Console.ReadLine());
+
+        //all edges
+        List<Edge> edges = new List<Edge>();
+        edges.Add(new Edge() { Vertex1 = 1, Vertex2 = 3, Weight = 5 });
+        edges.Add(new Edge() { Vertex1 = 2, Vertex2 = 4, Weight = 7 });
+        edges.Add(new Edge() { Vertex1 = 2, Vertex2 = 1, Weight = 2 });
+        edges.Add(new Edge() { Vertex1 = 3, Vertex2 = 2, Weight = 3 });
+        edges.Add(new Edge() { Vertex1 = 0, Vertex2 = 3, Weight = 3 });
+        edges.Add(new Edge() { Vertex1 = 4, Vertex2 = 0, Weight = 12 });
+
+        //set of vertices
+        List<int> vertices = new List<int>() { 0, 1, 2, 3, 4 };
+
+        List<Edge> MinimumSpanningTree = Kruskals_MST(edges, vertices);
+
+        //printing results
+        int totalWeight = 0;
+        foreach (Edge edge in MinimumSpanningTree)
+        {
+            totalWeight += edge.Weight;
+            Console.WriteLine("Vertex {0} to Vertex {1} weight is: {2}", edge.Vertex1, edge.Vertex2, edge.Weight);
+        }
+        Console.WriteLine("Total Weight: {0}", totalWeight);
+        Console.WriteLine("MST is :");
+        foreach (var item in MinimumSpanningTree)
+        {
+            Console.WriteLine($"edge {item.Vertex1} > edge {item.Vertex2}");
+        }
+        Console.ReadLine();
+
     }
 
-    Array.Reverse(Stock);
-
-    for (int i = 0; i < n; i++)
+    public static List<Edge> Kruskals_MST(List<Edge> edges, List<int> vertices)
     {
-        Console.WriteLine($"\n {Stock[i]}");
+        //empty result list
+        List<Edge> result = new List<Edge>();
+
+        //making set
+        Set set = new Set(100);
+        foreach (int vertex in vertices)
+            set.MakeSet(vertex);
+
+        //sorting the edges order by weight ascending
+        var sortedEdge = edges.OrderBy(x => x.Weight).ToList();
+        foreach (Edge edge in sortedEdge)
+        {
+            //adding edge to result if both vertices do not belong to same set
+            //both vertices in same set means it can have cycles in tree
+            if (set.FindSet(edge.Vertex1) != set.FindSet(edge.Vertex2))
+            {
+                result.Add(edge);
+                set.Union(edge.Vertex1, edge.Vertex2);
+            }
+        }
+        return result;
     }
+
+
 
 }
-else
-{
-    Console.WriteLine("Nombre d'entrée(s) : \n");
-    int n = int.Parse(Console.ReadLine());
-    IDictionary<String,int> Stock = new Dictionary<String, int>();
-    for (int i = 0; i < n; i++)
-    {
-        Console.WriteLine($"{i + 1}\'ème élement [Format :: String ('XY')] :");
-
-        String name = Console.ReadLine();
-
-        Console.WriteLine($"{i + 1}\'ème élement {name}, [Format :: entier ('10') ] :");
-
-        int dist = int.Parse(Console.ReadLine());
-    }
-
-    Stock.OrderByDescending(x => x.Value);
-
-
-    foreach (KeyValuePair<String, int> item in Stock.OrderBy(x => x.Value))
-    {
-        Console.WriteLine("Key: {0}, Value: {1}", item.Key.ToString(), item.Value.ToString());
-    }
-
-
-}
-
-
-
-
-Console.WriteLine("traitement...");
-
